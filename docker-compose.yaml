@@ -1,0 +1,38 @@
+services:
+  jenkins-server:
+    image: jenkins/jenkins:lts
+    user: jenkins  # Run as a non-root user
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+
+  jenkins-agent-builder-python:
+    build:
+      context: ./agent-builder-python
+    environment:
+      - JENKINS_URL=http://jenkins-server:8080
+      - JENKINS_AGENT_NAME=agent-builder-python
+      - JENKINS_SECRET=${AGENT_PYTHON_SECRET}
+      - JENKINS_AGENT_WORKDIR=/home/jenkins/agent
+    depends_on:
+      - jenkins-server
+
+  jenkins-agent-builder-docker:
+    build:
+      context: ./agent-builder-docker
+        #    privileged: true
+    environment:
+      - JENKINS_URL=http://jenkins-server:8080
+      - JENKINS_AGENT_NAME=agent-builder-docker
+      - JENKINS_SECRET=${AGENT_DOCKER_SECRET}
+      - JENKINS_AGENT_WORKDIR=/home/jenkins/agent
+        #    volumes:
+        #      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - jenkins-server
+
+
+volumes:
+  jenkins_home:
