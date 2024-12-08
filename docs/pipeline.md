@@ -2,7 +2,7 @@
 
 Este paso se ejecutará en la interfaz gráfica del Jenkins Server
 
-Añadiremos la cuenta del Registry de Docker a donde querrámos subir las imágenes en **+ New Item**.
+En la página principal de Jenkins haremos click en **+ New Item**.
 
 Ponemos un:
 1. Nombre
