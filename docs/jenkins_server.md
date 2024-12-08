@@ -35,6 +35,7 @@ Los nodos se pueden añadir en **Manage Jenkins > Nodes > + New Node**
 1. Remote root directory: /home/jenkins/agent
 1. Labels: agent-builder-python
 1. Usage: Only build jobs with label expressions matching this node
+1. Launch method: Launch agent by connecting it to the controller
 1. Se hará click en **Save** para crear el nodo en Jenkins server
 
 El resto de campos se dejarán con los valores por defecto
@@ -47,6 +48,7 @@ A continuación haremos click en el nodo creado **agent-builder-python** para ob
 1. Remote root directory: /home/jenkins/agent
 1. Labels: agent-builder-docker
 1. Usage: Only build jobs with label expressions matching this node
+1. Launch method: Launch agent by connecting it to the controller
 1. Se hará click en **Save** para crear el nodo en Jenkins server
 
 El resto de campos se dejarán con los valores por defecto
