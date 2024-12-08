@@ -14,6 +14,7 @@ Se proporciona también un archivo de docker compose para poder levantar un serv
 
 ## Pre-requisitos
 1. Cuenta de GitHub: Para poder hacer un trigger a la pipeline cuando hayan cambios en las ramas deseadas
+1. Cuenta de Docker Hub: Para poder subir la imagen creada
 1. Servidor Jenkins con IP ṕublica: El servidor de Jenkins se deberá instalar en un servidor con IP pública para que GitHub mediante webhooks pueda avisar a Jenkins y así empezar la ejecución de la pipeline
 
 ## Proceso de Instalación
