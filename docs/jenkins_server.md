@@ -22,13 +22,6 @@ En la interfaz gráfica del Servidor de Jenkis se llevarán a cabo los siguiente
 1. Crearemos un usuario administrador
 1. Usaremos la "Jenkins URL" que deseemos, ya sea la IP pública o el DNS
 
-
-## Plugins
-Instalaremos los siguientes plugins desde **Manage Jenkins > Plugins > + Available Plugins**:
-1. Git Plugin
-1. GitHub Plugin
-1. Pipeline Plugin
-
 ## Nodos
 Este paso es esencial antes de levantar los dos nodos:
 1. agent-builder-python
@@ -66,6 +59,3 @@ Es necesario tener los secrets para cada nodo en el archivo ".env". Para levanta
 ```bash
 docker compose up jenkins-agent-builder-python jenkins-agent-builder-docker -d
 ```
-
-#### System
-Añadiremos nuestra cuenta de GitHub en **Manage Jenkins > System > GitHub > GitHub Servers > Name**. Pondremos solo el nombre de la cuenta en este caso
